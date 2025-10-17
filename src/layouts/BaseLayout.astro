@@ -1,0 +1,110 @@
+---
+import "../styles/global.css";
+import "../styles/global2.css";
+
+// <--- AANPASSING: Importeer de Navigation component
+import Navigation from '../components/Navigation.astro';
+
+// src/layouts/BaseLayout.astro (or whatever you name your main layout)
+//
+// This file sets up the foundation for all your analysis articles.
+// It receives frontmatter data (like the title) as 'Astro.props'.
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Brutal honesty for people done pretending. No fluff. No filters. Just truth that hits where it matters." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark-mode"> 
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<title>{title} | REAL AF TRUTH</title>
+	<meta name="description" content={description} />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	
+	<style>
+		/* Global reset and basic body styles */
+		:root {
+			--color-text: #F0F0F0;
+			--color-background: #101010;
+			--color-accent: #E50914; /* Your brand's "danger" color */
+			--font-sans: 'Inter', system-ui, sans-serif;
+		}
+
+		.dark-mode {
+			color: var(--color-text);
+			background-color: var(--color-background);
+		}
+		
+		body {
+			font-family: var(--font-sans);
+			line-height: 1.7; /* Crucial for long-form text readability */
+			margin: 0;
+			padding: 0;
+		}
+
+		/* Main content container for readability on all screens */
+		.content-wrapper {
+			max-width: 760px; /* Optimal width for reading text */
+			padding: 2rem 1.5rem;
+			margin: 0 auto;
+		}
+
+		/* Focus on contrast for headings, use your accent color sparingly */
+		h1, h2, h3 {
+			line-height: 1.2;
+			margin-top: 2.5rem;
+			color: var(--color-text); 
+		}
+		
+		a {
+			color: var(--color-accent);
+			text-decoration: none;
+		}
+		
+		/* Your bold text (the snippets) needs to pop */
+		strong {
+			font-weight: 700;
+			color: var(--color-text);
+		}
+
+        /* <--- AANPASSING: CSS voor de sticky navbar */
+        .sticky-nav-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 100; /* Zorgt ervoor dat deze over de content ligt */
+            background-color: var(--color-background); 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Subtiele schaduw */
+        }
+
+	</style>
+</head>
+<body>
+	
+    <div class="sticky-nav-wrapper">
+        <Navigation />
+    </div>
+    <main class="content-wrapper">
+		<slot /> 
+	</main>
+
+	<section class="content-wrapper cta-section" style="padding: 4rem 1.5rem; text-align: center; border-top: 1px solid #333; margin-top: 4rem;">
+		<h2>The Work Doesn't Stop at Awareness.</h2>
+		<p>Get the full, step-by-step guide on breaking your cycles. One brutal truth bomb a week. No fluff. No apologies.</p>
+		
+		<div class="newsletter-embed">
+			<p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.6;">(Your data remains private. Your excuses do not.)</p>
+		</div>
+	</section>
+
+	<footer style="padding: 2rem 1.5rem; text-align: center; opacity: 0.7;">
+		<p>&copy; {new Date().getFullYear()} REAL AF TRUTH. No filters. No fluff. No apologies.</p>
+	</footer>
+</body>
+</html>

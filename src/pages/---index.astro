@@ -1,0 +1,93 @@
+---
+import "../styles/global.css"; // make sure Tailwind is enabled
+import "../styles/home.css";
+const currentYear = new Date().getFullYear();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REAL AF TRUTH</title>
+  </head>
+  <body class="bg-black text-white font-sans text-center flex flex-col items-center justify-start min-h-screen px-6">
+    <main class="w-full max-w-3xl mt-24 space-y-24">
+
+      <!-- HERO -->
+      <section>
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4">REAL AF TRUTH</h1>
+        <h2 class="text-lg font-semibold text-gray-300">Brutal honesty for people done pretending.</h2>
+
+        <p class="mt-8 text-gray-400">No fluff. No filters.<br />Just the truth about growth, pain, and showing up anyway.</p>
+
+        <p class="mt-8 text-sm text-gray-500">
+          From the creator behind <strong>The Unfiltered Guide to Owning Your Sh*t</strong> —
+          over 15,000 words of no-BS insight on what it really takes to grow up, show up, and stay real.
+        </p>
+
+        <div class="mt-10 space-y-4">
+          <a href="#subscribe" class="inline-flex items-center gap-2 border border-gray-400 rounded-full px-5 py-3 font-semibold hover:bg-white hover:text-black transition">
+            <span>📩</span> Get Notified When We Drop the First Truth Bomb
+          </a>
+          <p class="text-xs text-gray-500">Get one email a week. No filters. No fake optimism. Just truth that hits where it matters.</p>
+<center>
+<script async src="https://subscribe-forms.beehiiv.com/embed.js"></script><iframe src="https://subscribe-forms.beehiiv.com/14f05e2d-95e0-4a9c-a238-aa6dc848d2e5" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 560px; height: 209px; margin: 0; border-radius: 0px 0px 0px 0px !important; background-color: transparent; box-shadow: 0 0 #0000; max-width: 100%;"></iframe></div>
+</center>
+        </div>
+      </section>
+
+      <hr class="border-gray-700" />
+
+      <!-- SECOND SECTION -->
+      <section>
+        <h2 class="text-xl font-bold mb-4">
+          This isn’t another self-help brand.<br />It’s a wake-up call.
+        </h2>
+        <p class="text-gray-400 leading-relaxed max-w-xl mx-auto">
+          We’re building something that gives a damn about depth, not dopamine.<br />
+          Books that make you uncomfortable — and make you grow.<br />
+          Videos that slap harder than your excuses.<br />
+          Conversations that strip away performance and force self-reflection.
+        </p>
+
+        <a
+          href="#subscribe"
+          class="mt-8 inline-block bg-white text-black font-bold px-6 py-3 rounded-full hover:bg-gray-200 transition"
+        >
+          Join the List. Stay Real.
+        </a>
+      </section>
+
+      <hr class="border-gray-700" />
+
+      <!-- CREATOR SECTION -->
+      <section class="flex flex-col items-center space-y-4">
+        <img
+          src="/joey.jpg"
+          alt="Joey Mulder"
+          class="w-32 h-32 rounded-full object-cover border-2 border-gray-700"
+        />
+        <h3 class="font-semibold text-lg">Created by Joey Mulder</h3>
+        <p class="text-gray-400 text-sm max-w-lg leading-relaxed">
+          Writer, creator, and professional bullshit-cutter.<br />
+          Known for brutally honest books that expose the hidden truths behind confidence,
+          parenthood, identity, and self-worth.<br /><br />
+          Real AF Truth isn’t a brand. It’s a movement.
+        </p>
+      </section>
+
+      <hr class="border-gray-700" />
+
+      <!-- FOOTER -->
+      <footer class="pb-10 text-gray-600 text-xs space-y-2">
+        <p>© {currentYear} REAL AF TRUTH.</p>
+        <p>No filters. No fluff. No apologies.</p>
+        <div class="flex justify-center gap-4 mt-2">
+          <a href="https://tiktok.com" aria-label="TikTok" class="hover:text-white transition">TikTok</a>
+          <a href="https://instagram.com" aria-label="Instagram" class="hover:text-white transition">Instagram</a>
+          <a href="https://youtube.com" aria-label="YouTube" class="hover:text-white transition">YouTube</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

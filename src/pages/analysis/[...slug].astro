@@ -1,0 +1,26 @@
+---
+// src/pages/analysis/[...slug].astro (The Guaranteed Ship Version)
+
+import { getCollection } from 'astro:content';
+// CRITICAL: Hard-code the import of the layout
+import BaseLayout from '../../layouts/BaseLayout.astro'; 
+
+export async function getStaticPaths() {
+  const analysisEntries = await getCollection('analysis');
+  return analysisEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// Extract the rest of the frontmatter data to pass as props to the layout
+const layoutProps = entry.data; 
+
+---
+
+<BaseLayout {...layoutProps}>
+    <Content />
+</BaseLayout>
